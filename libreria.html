@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="libre.css">
+</head>
+
+<body>
+    <div id="app">
+        <img class="logo" src="descarga.png" alt="kids playing">
+        <div id="busq">
+            <label for="search"><img class="logo2" src="flecha.jpg" alt="kids playing">Search:</label>
+            <input type="text" id="search" placeholder="Your choice" @keyup="callInput" autofocus />
+        </div>
+        <div class="flex">
+            <div id="f1_container" class="container" v-for="book in books">
+                <div id="f1_card" class="shadow">
+                    <div class="front face">
+                        <img v-bind:src="book.portada">
+                    </div>
+                    <div class="back face center">
+                        <span>{{book.titulo}}</span>
+                        <p>{{book.descripcion}}</p>
+                        <p>{{book.idioma}}</p>
+                        <a href="">{{book.detalle}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="mainlibre.js"></script>
+</body>
+
+</html>
